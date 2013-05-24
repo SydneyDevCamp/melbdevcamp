@@ -1,0 +1,24 @@
+<!-- Carousel
+    ================================================== -->
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="item active">
+          <%= image_tag ('Melb5.jpg') %>
+          
+          <div class="container">
+            <div class="carousel-caption img-rounded">
+              <%= render 'layouts/messages' %>
+              <h1 class="lead">Melbourne Dev Camp - Spring 2013!</h1>
+              <br>
+              <h1 class="lead">We teach you how to become a confident web developer in a 10 week, intensive training programme.</h1>
+              
+              <br>
+              <%= link_to "Register your interest now!", new_enquiry_path, :class => "btn btn-large btn-primary" %>
+              
+            </div>
+             
+          </div>
+         
+        </div>
+      </div>
+    </div><!-- /.carousel -->

@@ -1,26 +1,20 @@
-<%= link_to "Mdc", root_path, :class => 'brand' %>
-<ul class="nav">
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Login', new_user_session_path %>
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
-    </li>
-    <% if current_user.has_role? :admin %>
-      <li>
-      <%= link_to 'Admin', users_path %>
-      </li>
-    <% end %>
-  <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
-  <% end %>
-</ul>
+<!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+
+            <h1><%= link_to image_tag("logo2.png", :alt => "Melbourne Dev Camp Logo"), root_path %> <%= link_to image_tag("mdc5.png", :alt => "Sydney Dev Camp"), root_path %>
+              <span style="font-size:16px"><a href="https://twitter.com/SydneyDevCamp" target="_blank"><i class="icon-twitter"></i></a>
+                <a href="https://www.facebook.com/SydneyDevCamp" target="_blank">&nbsp;<i class="icon-facebook"></i>&nbsp;</a>
+                <a href="https://plus.google.com/114736942787903829890" rel="publisher" target="_blank"><i class="icon-google-plus"></i></a></span></h1>
+            
+
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->

@@ -1,4 +1,7 @@
 Mdc::Application.routes.draw do
+  resources :enquiries
+
+
   authenticated :user do
     root :to => 'home#index'
   end

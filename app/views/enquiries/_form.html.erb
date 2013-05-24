@@ -1,0 +1,14 @@
+<%= simple_form_for(@enquiry) do |f| %>
+  <%= f.error_notification %>
+
+
+    <%= f.input :name, :label => "First name", :required => true, :input_html => { :class => "span4" }, :autofocus => true %>
+    <%= f.input :last_name, :label => "Last name", :input_html => { :class => "span4" } %>
+    <%= f.input :email, :label => "Your email", :required => true, :input_html => { :class => "span4" } %>
+    <%= f.input :phone, :label => "Your phone", :input_html => { :class => "span4" } %>
+    <%= f.input :linkedin, :label => "Your LinkedIn profile", :input_html => { :class => "span4" } %>
+    <%= f.input :message, :label => "Message", :input_html => { :class => "span4", :rows => 5 }, :placeholder => "(optional)" %>
+
+    <%= f.submit "Send", :class => "btn btn-large btn-primary" %>
+
+<% end %>

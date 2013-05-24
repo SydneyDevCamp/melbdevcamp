@@ -2,34 +2,42 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Mdc" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mdc" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Melbourne Dev Camp - 10 week Ruby on Rails course - Australia" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Australia's first intensive Rails training programme. At Melbourne Dev Camp we teach people how to code using Ruby on Rails in a 10 week, intensive training program. As our student, you will work with and be mentored by the industry's top programmers. We make programming fun and help our graduates get amazing jobs. Ruby is such an awesome language, let's spread the word!" %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="author" href="https://plus.google.com/100730085156302453180/posts" />
+
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <%= favicon_link_tag "/favicon.ico" %>
+    <%= render 'layouts/google_analytics' %>
   </head>
-  <body class="<%= controller_name %> <%= action_name %>">
-    <div class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-          <%= render 'layouts/navigation' %>
-        </div>
-      </nav>
-    </div>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
-        </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
+  <body class="<%= controller_name %> <%= action_name %> ">
+    <% cache('home') do %>
+    <%= render 'layouts/facebook_script' %>
+    <%= render 'layouts/navigation' %>
+            
+            <%= yield %>
+          
+
+      <%= render 'layouts/footer' %>
+  
+
+     
+        
+      <% end %>
   </body>
 </html>
