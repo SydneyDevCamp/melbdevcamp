@@ -36,6 +36,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.1)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (2.3.1.1)
+      sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.10)
     capybara (2.1.0)
@@ -190,6 +192,8 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    turbolinks (1.1.1)
+      coffee-rails
     tzinfo (0.3.37)
     uglifier (2.1.1)
       execjs (>= 0.3.0)
@@ -228,4 +232,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form (>= 2.1.0)
   thin (>= 1.5.0)
+  turbolinks
   uglifier (>= 1.0.3)
