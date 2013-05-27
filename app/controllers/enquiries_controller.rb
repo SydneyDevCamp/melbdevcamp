@@ -1,6 +1,6 @@
 class EnquiriesController < ApplicationController
   before_filter :autenticate_user!, :except => [:new, :create]
-  caches_page :new
+  caches_action :new
   # GET /enquiries
   # GET /enquiries.json
   def index
