@@ -1,4 +1,7 @@
 Mdc::Application.routes.draw do
+  get "programme/index", :id => "programme"
+  match "programme" => "programme#index"
+
   resources :enquiries
 
 
